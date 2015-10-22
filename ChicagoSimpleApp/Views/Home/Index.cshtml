@@ -1,0 +1,189 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<div id="wrap" style="margin-left: 0px">
+    <button id="left-panel" type="button" class="btn btn-default btn-group-lg" aria-label="Left Align">
+        <span id="left-panel-icon" class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    </button>
+    <button id="right-panel" type="button" class="btn btn-default btn-group-lg" aria-label="Left Align">
+        <span id="right-panel-icon" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    </button>
+    <div class="panel">
+        <div class="background"></div>
+        <div class="cover">
+            <div id="home-caption">
+                <div id="title">Food in Chicago</div>
+                <div id="caption">A simple web application using Azure DocumentDB to store Chicago Food Inspections, Users and Comments.</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="profile">
+            <div id="profile-top">
+                @Html.Raw("<img class='profile-img' src='data:image/png;base64," + ViewBag.User.Picture + "'}>");
+                <div class="contact-info">
+                    <div class="profile-text" id="FullName">
+                        @ViewBag.User.FirstName @ViewBag.User.LastName
+                    </div>
+                    <div class="profile-text-mid" id="JobTitle">
+                        @ViewBag.User.JobTitle
+                    </div>
+                    <div class="profile-text" id="Company">
+                        @ViewBag.User.Company
+                    </div>
+                </div>
+            </div>
+            <div id="favorites-list">
+                <table class="table">
+                    <tr>
+                        <th>
+                            Favorites
+                        </th>
+                        <th>
+                            History
+                        </th>
+                    </tr>
+                    @foreach (var favorite in @ViewBag.User.Favorites)
+                    {
+                        <tr><td class="first-col">
+                            <button class="first-btn">@favorite</button></td>
+                        @if(favorite == @ViewBag.User.Favorites[0]){<td rowspan="20" style="padding: 0px;"><pre id="history-text">@foreach (var item in @ViewBag.HistoryItems){ @: @item</break> 
+                                                                                                                                                     }</pre></td>}</tr>
+                    }
+                    @for (int i = 0; i < 15; i ++ )
+                    {
+                        <tr><td class="first-col empty-col"></td></tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="profile">
+            <div id="profile-top">
+                @Html.Raw("<img class='profile-img' src='data:image/png;base64," + ViewBag.User.Picture + "'}>");
+                <div class="contact-info">
+                    <div class="profile-text" id="FullName">
+                        @ViewBag.User.FirstName @ViewBag.User.LastName
+                    </div>
+                    <div class="profile-text-mid" id="JobTitle">
+                        @ViewBag.User.JobTitle
+                    </div>
+                    <div class="profile-text" id="Company">
+                        @ViewBag.User.Company
+                    </div>
+                </div>
+            </div>
+            <div id="favorites-list">
+                <table class="table">
+                    <tr>
+                        <th class="first-col-comment">
+                            Date
+                        </th>
+                        <th>
+                            Comment
+                        </th>
+                        <th>
+                            Submit
+                        </th>
+                    </tr>
+                    @foreach (var comment in @ViewBag.Comments)
+                    {
+                        <tr>
+                            <td class="first-col-comment">@comment.date</td>
+                            <td class="comment-editor"><div contenteditable="true" id="@comment.id">@comment.msg</div></td>
+                            <td>
+                                <button type="button" class="submit-btn btn" id="@comment.id-btn" }><span class="glyphicon glyphicon-cloud-upload" aria-hidden="true" style="font-size: 20px"></span></button>
+                            </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="facilities">
+            <ul>
+                <li class="letter-nav active"> # </li>
+                <li class="letter-nav"> a </li>
+                <li class="letter-nav"> b </li>
+                <li class="letter-nav"> c </li>
+                <li class="letter-nav"> d </li>
+                <li class="letter-nav"> e </li>
+                <li class="letter-nav"> f </li>
+                <li class="letter-nav"> g </li>
+                <li class="letter-nav"> h </li>
+                <li class="letter-nav"> i </li>
+                <li class="letter-nav"> j </li>
+                <li class="letter-nav"> k </li>
+                <li class="letter-nav"> l </li>
+                <li class="letter-nav"> m </li>
+                <li class="letter-nav"> n </li>
+                <li class="letter-nav"> o </li>
+                <li class="letter-nav"> p </li>
+                <li class="letter-nav"> q </li>
+                <li class="letter-nav"> r </li>
+                <li class="letter-nav"> s </li>
+                <li class="letter-nav"> t </li>
+                <li class="letter-nav"> u </li>
+                <li class="letter-nav"> v </li>
+                <li class="letter-nav"> w </li>
+                <li class="letter-nav"> x </li>
+                <li class="letter-nav"> y </li>
+                <li class="letter-nav"> z </li>
+            </ul>
+            <table class="table">
+                <tr>
+                    <th>
+                        Facility
+                    </th>
+                    <th>
+                        History
+                    </th>
+                </tr>
+                <tbody id="letter-tbody">
+                    @foreach (var item in @ViewBag.LetterItems)
+                    {
+                        <tr style="height: 35px">
+                            <td class="first-col-2">
+                                <button class="first-btn-2" data-internalid="@item.facility" data-address="@item.Address">@item.facility @item.Address</button>
+                            </td>
+                            @if (item == @ViewBag.LetterItems[0]) { <td rowspan="20" style="padding: 0px;" height="700px"><pre id="letter-text"></pre></td>}
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="panel">
+        <div id="heatmap"></div>
+        <button type="button" class="heat-map-btn btn"><span class="glyphicon glyphicon-fire" aria-hidden="true" style="font-size: 70px"></span></button>
+        <div id="mappings">
+        </div>
+    </div>
+    <div class="panel">
+        <div class="rssfeed">
+            <div id="rssfeed-title">Microsoft Twitter Trending</div>
+            <table id="rss-feed-table" class="table">
+                <tr><td id="feed-1-1">-</td><td id="feed-1-2">-</td><td id="feed-1-3">-</td></tr>
+                <tr><td id="feed-2-1">-</td><td id="feed-2-2">-</td><td id="feed-2-3">-</td></tr>
+                <tr><td id="feed-3-1">-</td><td id="feed-3-2">-</td><td id="feed-3-3">-</td></tr>
+                <tr><td id="feed-4-1">-</td><td id="feed-4-2">-</td><td id="feed-4-3">-</td></tr>
+                <tr><td id="feed-5-1">-</td><td id="feed-5-2">-</td><td id="feed-5-3">-</td></tr>
+                <tr><td id="feed-6-1">-</td><td id="feed-6-2">-</td><td id="feed-6-3">-</td></tr>
+                <tr><td id="feed-7-1">-</td><td id="feed-7-2">-</td><td id="feed-7-3">-</td></tr>
+                <tr><td id="feed-8-1">-</td><td id="feed-8-2">-</td><td id="feed-8-3">-</td></tr>
+                <tr><td id="feed-9-1">-</td><td id="feed-9-2">-</td><td id="feed-9-3">-</td></tr>
+                <tr><td id="feed-10-1">-</td><td id="feed-10-2">-</td><td id="feed-10-3">-</td></tr>
+                <tr><td id="feed-11-1">-</td><td id="feed-11-2">-</td><td id="feed-11-3">-</td></tr>
+                <tr><td id="feed-12-1">-</td><td id="feed-12-2">-</td><td id="feed-12-3">-</td></tr>
+                <tr><td id="feed-13-1">-</td><td id="feed-13-2">-</td><td id="feed-13-3">-</td></tr>
+                <tr><td id="feed-14-1">-</td><td id="feed-14-2">-</td><td id="feed-14-3">-</td></tr>
+                <tr><td id="feed-15-1">-</td><td id="feed-15-2">-</td><td id="feed-15-3">-</td></tr>
+                <tr><td id="feed-16-1">-</td><td id="feed-16-2">-</td><td id="feed-16-3">-</td></tr>
+                <tr><td id="feed-17-1">-</td><td id="feed-17-2">-</td><td id="feed-17-3">-</td></tr>
+                <tr><td id="feed-18-1">-</td><td id="feed-18-2">-</td><td id="feed-18-3">-</td></tr>
+            </table>
+        </div>
+    </div>
+</div>

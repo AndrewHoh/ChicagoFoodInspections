@@ -1,0 +1,335 @@
+﻿html {
+    height: 100%;
+    overflow-x:hidden;
+}
+
+body {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin: 0px;
+    max-width: 100%;
+    min-height: inherit;
+}
+
+.background {
+    position:absolute;
+    z-index: 0;
+    background-image: url(../Images/WIN14_Scene_06.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+    opacity: 0.4;
+}
+
+.cover {
+    padding-top: 50px;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#home-caption {
+    position:relative;
+    top: 35%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-left: 100px;
+    padding-right:100px;
+}
+
+#title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1000%;
+    font-weight: 900;
+    font-style:italic;
+    color:black;
+}
+
+#caption {
+    margin-top: 30px;
+    font-weight:400;
+    font-size:300%;
+    color:black;
+}
+
+#home-btn {
+    margin-top: 30px;
+}
+
+.p-top-content {
+    padding-top: 50px;
+}
+
+.panel {
+    width:16.6666666%;
+    float:left;
+    height: 100%;
+}
+
+#wrap {
+    min-height:100%;
+    height: 100%;
+    width: 600%;
+    overflow:hidden;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+#left-panel, #right-panel {
+    position:fixed;
+    background-color: grey;
+    width: 100px;
+    height: 100%;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+#left-panel {
+    float:left;
+    left: 0;
+}
+
+#right-panel {
+    float:right;
+    right:0;
+}
+
+#left-panel:hover, #right-panel:hover {
+    opacity: 0.4;
+    background-color: lightgray;
+}
+
+#left-panel-icon, #right-panel-icon {
+    font-size: 30px;
+}
+
+#welcoming-label:hover {
+    cursor: default;
+    color: #999999;
+}
+
+.profile {
+    padding-top: 50px;
+    padding-left: 98px;
+    padding-right: 100px;
+}
+
+.profile-text {
+    border-bottom: thin solid;
+    width: 80%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.profile-text-mid {
+    border-bottom: thin solid;
+    width: 120%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.profile-img {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 200px;
+    height: 200px;
+    float: left;
+}
+
+.contact-info {
+    margin-top: 3%;
+    margin-left: 100px;
+    float: left;
+    font-size:300%;
+    font-weight:300;
+    color:black;
+}
+
+.table {
+    margin-top: 30px;
+    font-size: 200%;
+    font-weight:100;
+}
+
+.facilities {
+    padding-top: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+#heatmap {
+    position:absolute;
+    z-index: 0;
+    background-image: url(../Images/ChicagoMap.PNG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+}
+
+#mappings {
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#dot {
+    height: 5px;
+    width: 5px;
+    position: absolute;
+}
+
+#profile-top {
+    background-color: rgb(210, 225, 240);
+    height: 250px;
+}
+
+.first-col {
+    width:400px;
+    padding: 0px !important;
+    height:60px;
+}
+
+.first-col-2 {
+    width:600px;
+    padding: 0px !important;
+}
+
+.first-col-comment {
+    width: 100px;
+    padding-left: 30px;
+}
+
+.empty-col {
+    width:100px;
+    border-top: none !important;
+}
+
+#history-text {
+    height: 480px;
+    overflow-y: auto;
+}
+
+.first-btn {
+    width: 100%;
+    height: 100%;
+    background:none;
+    border:none; 
+}
+
+.first-btn-2 {
+    width: 100%;
+    height: 100%;
+    background:none;
+    border:none; 
+    text-align: left;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 20px;
+}
+
+li {
+    height: 20px;
+    float:left;
+    margin-right: 0px;
+    border-right: 2px solid #dddddd;
+    padding: 0 15px;
+    text-decoration: none;
+    color: black;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    cursor:pointer;
+}
+
+li:hover {
+    font-weight:600;
+    color: navy;
+    font-size:20px;
+}
+
+li:last-child {
+    border-right:none;
+}
+
+#letter-tbody {
+    height: 100px;      
+    overflow-y: auto;   
+    overflow-x: hidden; 
+}
+
+#letter-text {
+    height: inherit;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.submit-btn {
+    border: none;
+    background-color: white !important;
+}
+
+.comment-editor {
+    width:70%;
+    text-overflow: ellipsis;
+}
+
+.heat-map-btn {
+  top: 200px;
+  left: 82%;
+  position: relative;
+  color: orange;
+  background-color: #ACC7F2;
+}
+
+.heat-map-btn:focus{
+    color: darkred;
+    border: none;
+    outline: none;
+}
+
+.heat-map-btn:hover{
+    color:darkred;
+}
+
+.navbar-right {
+    padding-right: 30px;
+}
+
+.rssfeed {
+    padding-top: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.rssfeed td {
+    width: 33%;
+    font-weight: 200;
+}
+
+.facilities ul {
+    -webkit-padding-start: 10px;
+    padding-left: 10px;
+}
+
+#rssfeed-title {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 500%;
+    font-weight: 400;
+    font-style: italic;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+}
